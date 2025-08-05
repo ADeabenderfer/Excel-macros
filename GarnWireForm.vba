@@ -73,7 +73,7 @@ End Function
 '        On Error Resume Next
 '        With OutMail
 '    .To = emailTo.Range("C7").Value
-'    .Subject = "Garnishment Wire Breakdown – LYM2 $" & emailTo.Range("I27").Value
+'    .Subject = "Garnishment Wire Breakdown – $" & emailTo.Range("I27").Value
 '    .Body = emailTo.Range("F7").Value
 '            .Attachments.Add Dest.FullName
 '            .Display   'or use .Send
@@ -101,8 +101,8 @@ userInfo = Environ("Username")
 
 'Verify if workbook exists - used with IsFile function
     Dim xRet As Boolean
-    xRet = IsFile("C:\Users\" & userInfo & "\OneDrive - Liberty Mutual\" & _
-            "Tax\Garnishments\Balancing-Payments\ADP Breakdown Template.xlsm")
+    xRet = IsFile("C:\Users\" & userInfo & "\OneDrive - Company\" & _
+            "Subfolder1\Subfolder2\Subfolder3\ADP Breakdown Template.xlsm")
     If xRet Then
     Else
     MsgBox "Workbook doesn't exist, please create and re-run"
@@ -114,8 +114,8 @@ userInfo = Environ("Username")
     If xRet Then
     Else
         'Opens workbook if closed
-        Workbooks.Open "C:\Users\" & userInfo & "\OneDrive - Liberty Mutual\" & _
-            "Tax\Garnishments\Balancing-Payments\ADP Breakdown Template.xlsm"
+        Workbooks.Open "C:\Users\" & userInfo & "\OneDrive - Company\" & _
+            "Subfolder1\Subfolder2\Subfolder3\ADP Breakdown Template.xlsm"
     End If
 
 
